@@ -1,9 +1,3 @@
-// If already logged in → go to main page
-if (localStorage.getItem("loggedIn") === "true") {
-    window.location.href = "index.html";
-}
-
-// SIGNUP (store user)
 function signup() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
@@ -13,13 +7,14 @@ function signup() {
         return;
     }
 
-    // Save user in localStorage
-    localStorage.setItem("user", JSON.stringify({ username: user, password: pass }));
+    localStorage.setItem("user", JSON.stringify({
+        username: user,
+        password: pass
+    }));
 
     alert("Signup successful! Now login.");
 }
 
-// LOGIN
 function login() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
@@ -39,7 +34,6 @@ function login() {
     }
 }
 
-// LOGOUT
 function logout() {
     localStorage.removeItem("loggedIn");
     window.location.href = "login.html";
