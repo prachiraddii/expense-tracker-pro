@@ -1,30 +1,100 @@
-body {
-    font-family: Arial;
-    text-align: center;
-    background: #f4f4f4;
-    color: black;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+}
+
+/* Header */
+h1 {
+    margin: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* Container Card */
+.container {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+input, select {
+    padding: 12px;
+    margin: 10px;
+    width: 25%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* Expense List */
+ul {
+    width: 80%;
+    margin: auto;
+}
+
+li {
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Chart */
+canvas {
+    display: block;
+    margin: 30px auto;
+}
+
+/* AI Insight */
+#ai {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 20px;
+    color: #ff5722;
+}
+
+/* Dark Mode */
 .dark {
     background: #121212;
     color: white;
 }
 
-.container {
-    margin: 20px;
-}
-
-input, select, button {
-    padding: 10px;
-    margin: 5px;
-}
-
-li {
-    background: white;
-    margin: 5px;
-    padding: 10px;
-}
-
+.dark .container,
 .dark li {
     background: #1e1e1e;
+}
+
+.dark input,
+.dark select {
+    background: #2c2c2c;
+    color: white;
+    border: none;
 }
