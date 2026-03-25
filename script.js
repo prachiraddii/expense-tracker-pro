@@ -1,4 +1,4 @@
-// Protect page (redirect if not logged in)
+// Protect page
 if (localStorage.getItem("loggedIn") !== "true") {
     window.location.href = "login.html";
 }
@@ -16,12 +16,7 @@ function addExpense() {
         return;
     }
 
-    expenses.push({
-        desc: desc,
-        amount: Number(amount),
-        category: category
-    });
-
+    expenses.push({ desc, amount: Number(amount), category });
     localStorage.setItem("expenses", JSON.stringify(expenses));
 
     document.getElementById("desc").value = "";
@@ -69,7 +64,6 @@ function deleteExpense(index) {
 function drawChart(data) {
     const ctx = document.getElementById("chart").getContext("2d");
 
-    // Destroy old chart before creating new one (VERY IMPORTANT)
     if (chartInstance) {
         chartInstance.destroy();
     }
@@ -85,25 +79,22 @@ function drawChart(data) {
     });
 }
 
-// Simple AI insight
 function aiInsights(data, total) {
     let maxCategory = Object.keys(data).reduce((a, b) =>
         data[a] > data[b] ? a : b
     );
 
-    let message = `You are spending most on ${maxCategory}.`;
+    let msg = `You are spending most on ${maxCategory}.`;
 
     if (total > 5000) {
-        message += " ⚠️ High spending!";
+        msg += " ⚠️ High spending!";
     }
 
-    document.getElementById("ai").innerText = message;
+    document.getElementById("ai").innerText = msg;
 }
 
-// Dark mode toggle
 function toggleDarkMode() {
     document.body.classList.toggle("dark");
 }
 
-// Initial load
 displayExpenses();
