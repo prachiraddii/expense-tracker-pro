@@ -1,0 +1,30 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #f4f4f4;
+    color: black;
+}
+
+.dark {
+    background: #121212;
+    color: white;
+}
+
+.container {
+    margin: 20px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin: 5px;
+}
+
+li {
+    background: white;
+    margin: 5px;
+    padding: 10px;
+}
+
+.dark li {
+    background: #1e1e1e;
+}
